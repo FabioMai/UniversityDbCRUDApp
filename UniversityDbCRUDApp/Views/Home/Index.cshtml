@@ -1,0 +1,54 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+        <h2 class="display-3">CS3413: CRUD application</h2>
+        <div class="row">
+            <div class="col-7" style="margin-top: 30px;">
+                <table class="tabletable-bordered">
+                    <tbody>
+                        <tr>
+                            <td>Student Name</td>
+                            <td>Fabio Maienschein</td>
+                        </tr>
+                        <tr>
+                            <td>Student ID</td>
+                            <td><!-- TUDO Student ID kapseln und einfügen -> .gitignore austesten --></td>
+                        </tr>
+                        <tr>
+                            <td>Assignment #</td>
+                            <td>A2 application design</td>
+                        </tr>
+                        <tr>
+                            <td>Programming language</td>
+                            <td>ASP.NET Web Application</td>
+                        </tr>
+                        <tr>
+                            <td>Web Application Server</td>
+                            <td>Visual Studio 2017 -> IIS</td>
+                        </tr>
+                        <tr>
+                            <td>Database Server</td>
+                            <td>Provided SQL Server</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-5">
+                <div class="row" style="margin-top: 30px;">
+                    <div class="col-md-6">
+                        <h2>Students</h2>
+                        <p><a class="btn btn-secondary" href="./DataUI?table=students"  role="button">Query &raquo;</a></p>
+                    </div>
+                    <div class="col-md-6">
+                        <h2>Courses</h2>
+                        <p><a class="btn btn-secondary" href="./DataUI?table=courses" role="button">Query &raquo;</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
