@@ -31,18 +31,28 @@ namespace UniversityDbCRUDApp.Controllers
         }
 
         // POST: api/Student
-        public void Post([FromBody]string value)
+        [Route("Students")]
+        [HttpPost]
+        public bool Post([FromBody]Student ourStudent)
         {
+            return _ourStudentRepository.InsertStudent(ourStudent);
         }
 
         // PUT: api/Student/5
-        public void Put(int id, [FromBody]string value)
+        [Route("Students")]
+        [HttpPut]
+        public bool Put([FromBody]Student ourStudent)
         {
+            return _ourStudentRepository.UpdateStudent(ourStudent);
+
         }
 
         // DELETE: api/Student/5
-        public void Delete(int id)
+        [Route("Students/{id}")]
+        [HttpDelete]
+        public bool Delete(int id)
         {
+            return _ourStudentRepository.DeleteStudent(id);
         }
     }
 }

@@ -26,20 +26,41 @@ namespace UniversityDbCRUDApp.DataAccess
             throw new NotImplementedException();
         }
 
+        // Foreign keys müssen berücksichtigt werden!!!
         public bool InsertStudent(Student ourStudent)
         {
-            throw new NotImplementedException();
+        //    int rowsAffected = this._db.Execute(@"INSERT Student([id],[name],[dept_name],[tot_cred]) values (@ID, @Name, @DeptName, @TotCred)", new { ID = ourStudent.ID, Name = ourStudent.name, DeptName = ourStudent.dept_name, TotCred = ourStudent.tot_cred });
+
+        //    if (rowsAffected > 0)
+        //    {
+        //        return true;
+        //    }
+            return false;
         }
 
-        public bool DeleteStudent(int StudentId)
+
+        public bool DeleteStudent(int studentId)
         {
-            throw new NotImplementedException();
+            int rowsAffected = this._db.Execute(@"DELETE FROM [Student] WHERE ID = @ID", new { ID = studentId });
+
+            if (rowsAffected > 0)
+            {
+                return true;
+            }
+            return false;
         }
 
         public bool UpdateStudent(Student ourStudent)
         {
-            throw new NotImplementedException();
+            int rowsAffected = this._db.Execute("UPDATE [Student] SET [Name] = @Name ,[Dept_Name] = @DeptName, [Tot_Cred] = @TotCred WHERE ID = " + ourStudent.ID, ourStudent);
+
+            if (rowsAffected > 0)
+            {
+                return true;
+            }
+            return false;
         }
+
 
     }
 }
